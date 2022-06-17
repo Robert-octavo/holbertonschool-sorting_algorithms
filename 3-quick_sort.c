@@ -10,19 +10,19 @@ void sort(int *array, size_t size, int left, int right);
 
 void quick_sort(int *array, size_t size)
 {
-    if (array == NULL || size <= 1)
+	if (array == NULL || size <= 1)
 		return;
 
-    sort(array, size, 0, size - 1);
+	sort(array, size, 0, size - 1);
 }
 
 /**
- * @brief -
- * 
- * @param array 
- * @param size 
- * @param left 
- * @param right 
+ * @brief
+ *
+ * @param array
+ * @param size
+ * @param left
+ * @param right
  */
 
 void sort(int *array, size_t size, int left, int right)
@@ -38,17 +38,17 @@ void sort(int *array, size_t size, int left, int right)
 }
 
 /**
- * @brief 
- * 
- * @param array 
- * @param size 
- * @param left 
- * @param right 
- * @return int 
+ * @brief
+ *
+ * @param array
+ * @param size
+ * @param left
+ * @param right
+ * @return int
  */
 int partition(int *array, size_t size, int left, int right)
 {
-    int tmp, i;
+	int tmp, i;
 	int j;
 
 	i = left - 1;
@@ -71,7 +71,7 @@ int partition(int *array, size_t size, int left, int right)
 
 	/*right*/
 
-    if (array[right] < array[i + 1])
+	if (array[right] < array[i + 1])
 	{
 		tmp = array[i + 1];
 		array[i + 1] = array[right];
