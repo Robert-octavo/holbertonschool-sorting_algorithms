@@ -22,6 +22,7 @@ void _swap(int *a, int *b)
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, minor;
+	int *array_cpy;
 
 	for (i = 0; i < size - 1; i++)
 	{
@@ -33,11 +34,22 @@ void selection_sort(int *array, size_t size)
 				minor = j;
 			}
 		}
+		for (i = 0; i < size - 1; i++)
+		{
+			array_cpy[i] = array[i];
+		}
 
 		if (minor != i)
 		{
 			_swap(&array[i], &array[minor]);
-			print_array(array, size);
+		}
+		for (i = 0; i < size - 1; i++)
+		{
+			if (array_cpy[i] != array[i])
+			{
+				print_array(array, size);
+				break;
+			}
 		}
 	}
 }
