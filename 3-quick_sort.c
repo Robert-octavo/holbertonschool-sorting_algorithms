@@ -1,13 +1,14 @@
 #include "sort.h"
+
+int partition(int *array, size_t size, int left, int right);
+void sort(int *array, size_t size, int left, int right);
+
 /**
  * quick_sort - function that sorts an array of integers
  * in ascending order using the Quick sort algorithm
  * @array: array to sort
  * @size: size of the array
  */
-int partition(int *array, size_t size, int left, int right);
-void sort(int *array, size_t size, int left, int right);
-
 void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size <= 1)
@@ -17,12 +18,12 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * @brief
+ * sort - quicksort algorithm
  *
- * @param array
- * @param size
- * @param left
- * @param right
+ * @array: array to sort
+ * @size: array's size
+ * @left: starting index
+ * @right: ending index
  */
 
 void sort(int *array, size_t size, int left, int right)
@@ -38,13 +39,13 @@ void sort(int *array, size_t size, int left, int right)
 }
 
 /**
- * @brief
+ * partition - return the pivot
  *
- * @param array
- * @param size
- * @param left
- * @param right
- * @return int
+ * @array: array of integer
+ * @size: array's size
+ * @left: starting index
+ * @right: ending index
+ * Return: integer
  */
 int partition(int *array, size_t size, int left, int right)
 {
