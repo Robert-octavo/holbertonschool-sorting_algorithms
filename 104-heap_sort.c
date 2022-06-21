@@ -1,6 +1,6 @@
 #include "sort.h"
 void _swap(int *a, int *b);
-void heapify(int *array, size_t n, size_t i);
+void heapify(int *array, size_t n, size_t i, size_t size);
 /**
  * _swap - Function to swap the the position of two elements
  * @a: Puntero
@@ -14,13 +14,14 @@ void _swap(int *a, int *b)
 	*b = temp;
 }
 /**
- * heapify - g
+ * heapify - turns an array in a heap tree
  *
- * @array: d
- * @n: d
- * @i: d
+ * @array: array to turn
+ * @n: size of the subtree
+ * @i: index
+ * @size: size of the array
  */
-void heapify(int *array, size_t n, size_t i)
+void heapify(int *array, size_t n, size_t i, size_t size)
 {
 	/*Find largest among root, left child and right child*/
 	size_t largest = i;
@@ -37,8 +38,8 @@ void heapify(int *array, size_t n, size_t i)
 	if (largest != i)
 	{
 		_swap(&array[i], &array[largest]);
-		print_array(array, n);
-		heapify(array, n, largest);
+		print_array(array, size);
+		heapify(array, n, largest, size);
 	}
 }
 
@@ -58,7 +59,7 @@ void heap_sort(int *array, size_t size)
 
     /*Build max heap*/
 	for (i = size / 2 - 1; i >= 0; i--)
-		heapify(array, size, i);
+		heapify(array, size, i, size);
 
     /*Heap Sort*/
 	for (i = size - 1; i >= 0; i--)
@@ -67,6 +68,6 @@ void heap_sort(int *array, size_t size)
 		if (i != 0)
 			print_array(array, size);
 		/*Heapify root element to get highest element at root again*/
-		heapify(array, i, 0);
+		heapify(array, i, 0, size);
 	}
 }
