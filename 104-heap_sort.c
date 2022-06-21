@@ -38,6 +38,7 @@ void heapify(int *array, size_t n, size_t i, size_t size)
 	if (largest != i)
 	{
 		_swap(&array[i], &array[largest]);
+		/*print_array(array, n)*/
 		print_array(array, size);
 		heapify(array, n, largest, size);
 	}
